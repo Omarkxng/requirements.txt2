@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from google import genai
 
 app = Flask(__name__)
-
+@app.route('/trading-webhook', methods=['GET', 'POST'])
 # 2026 SDK Setup
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
